@@ -1,8 +1,8 @@
 {
-    "name": "rails_erb",
+    "name": "rails-helper",
     "publisher": "aiyuhang",
-    "displayName": "rails_erb",
-    "description": "rails_erb",
+    "displayName": "rails-helper",
+    "description": "rails-helper",
     "icon": "icon/rails.png",
     "licence": "Please refer to LICENSE - MIT",
     "galleryBanner": {
@@ -29,7 +29,9 @@
         "erb",
         "slim",
         "rails erb",
-        "rails_erb"
+        "rails_erb",
+        "rails helper",
+        "rails_helper"
     ],
     "contributes": {
         "snippets": [
