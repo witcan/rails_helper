@@ -346,5 +346,23 @@
       "<% end %>"
     ],
     "description": "rails _form.html.erb"
+  },
+  "simple_form": {
+    "prefix": "simple_form",
+    "body": [
+      "<%= simple_form_for $1 do |${2:form}| %>",
+      "  <%= form.error_notification %>",
+      "",
+      "  <div class='form-inputs'>",
+      "    <%= form.input :id %>",
+      "  </div>",
+      "",
+      "  <div class='form-actions'>",
+      "    <%= f.button :submit, class: 'btn btn-primary' %>",
+      "    <%= link_to 'Cancel', url_for(:back), class: 'btn btn-default' %>",
+      "  </div>",
+      "<% end %>"
+    ],
+    "description": "rails _form.html.erb"
   }
 }
