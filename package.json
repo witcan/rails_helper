@@ -1,0 +1,77 @@
+{
+    "name": "rails_erb",
+    "publisher": "aiyuhang",
+    "displayName": "rails_erb",
+    "description": "rails_erb",
+    "icon": "icon/rails.png",
+    "licence": "Please refer to LICENSE - MIT",
+    "galleryBanner": {
+        "color": "#8b0000",
+        "theme": "dark"
+    },
+    "homepage": "https://github.com/Chris56974/ruby-and-rails-snippets",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Chris56974/ruby-and-rails-snippets"
+    },
+    "version": "0.2.3",
+    "engines": {
+        "vscode": "^1.35.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "keywords": [
+        "rails",
+        "ROR",
+        "RoR",
+        "Ruby on Rails",
+        "erb",
+        "slim",
+        "rails erb",
+        "rails_erb"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "slim",
+                "path": "./snippets/erb.json"
+            },
+            {
+                "language": "html",
+                "path": "./snippets/erb.json"
+            },
+            {
+                "language": "ruby",
+                "path": "./snippets/ruby.json"
+            }
+        ],
+        "languages": [
+            {
+                "id": "html",
+                "aliases": [
+                    "HTML(Rails)"
+                ],
+                "extensions": [
+                    ".html.erb"
+                ]
+            },
+            {
+                "id": "slim",
+                "aliases": [
+                    "html.slim"
+                ],
+                "extensions": [
+                    ".html.slim"
+                ]
+            }
+        ],
+        "grammars": [
+            {
+                "language": "html",
+                "scopeName": "text.html.erb",
+                "path": "./syntaxes/erb.tmLanguage"
+            }
+        ]
+    }
+}
