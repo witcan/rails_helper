@@ -28,18 +28,18 @@
     ],
     "description": "rails each"
   },
-  "form_for": {
-    "prefix": "formfor",
+  "form_with": {
+    "prefix": "formwith",
     "body": [
-      "<%= form_for ${1:variable} do |${2:f}| %>",
+      "<%= form_with ${1:variable}, local: true do |${2:form}| %>",
       "\t$3",
       "<% end %>"
     ],
-    "description": "rails form_for"
+    "description": "rails form_with"
   },
   "time_zone_select": {
     "prefix": "timezone",
-    "body": "<%= f.time_zone_select :${1:column_name} %>",
+    "body": "<%= form.time_zone_select :${1:column_name} %>",
     "description": "rails time_zone_select"
   },
   "range_field": {
@@ -104,79 +104,79 @@
   },
   "submit": {
     "prefix": "submit",
-    "body": "<%= f.submit %>$0",
+    "body": "<%= form.submit %>$0",
     "description": "rails form submit"
   },
   "label": {
     "prefix": "label",
-    "body": "<%= f.label :${1:id_name}, '${2:text}' %>",
+    "body": "<%= form.label :${1:id_name}, '${2:text}' %>",
     "description": "rails form label"
   },
   "number_field": {
     "prefix": "numberfield",
-    "body": "<%= f.number_field (:${1:id_name}, in: ${2:1.0..20.0}, step: ${3:0.5}) %>",
+    "body": "<%= form.number_field (:${1:id_name}, in: ${2:1.0..20.0}, step: ${3:0.5}) %>",
     "description": "rails number_field"
   },
   "time_field": {
     "prefix": "timefield",
-    "body": "<%= f.time_field :${1:id_name} %>",
+    "body": "<%= form.time_field :${1:id_name} %>",
     "description": "rails time_field"
   },
   "hidden_field": {
     "prefix": "hiddenfield",
-    "body": "<%= f.hidden_field :${1:id_name} %>",
+    "body": "<%= form.hidden_field :${1:id_name} %>",
     "description": "rails hidden_field"
   },
   "email_field": {
     "prefix": "emailfield",
     "body": [
-      "<%= f.email_field :${1:id_name} %>"
+      "<%= form.email_field :${1:id_name} %>"
     ],
     "description": "rails email_field"
   },
   "url_field": {
     "prefix": "urlfield",
-    "body": "<%= f.url_field :${1:id_name} %>",
+    "body": "<%= form.url_field :${1:id_name} %>",
     "description": "rails url_field"
   },
   "password_field": {
     "prefix": "passwordfield",
-    "body": "<%= f.password_field :${1:id_name} %>",
+    "body": "<%= form.password_field :${1:id_name} %>",
     "description": "rails password_field"
   },
   "text_area": {
     "prefix": "textarea",
-    "body": "<%= f.text_area :${1:id_name} %>",
+    "body": "<%= form.text_area :${1:id_name} %>",
     "description": "rails text_area"
   },
   "check_box": {
     "prefix": "checkbox",
-    "body": "<%= f.check_box :${1:id_name} %>",
+    "body": "<%= form.check_box :${1:id_name} %>",
     "description": "rails check_box"
   },
   "text_field": {
     "prefix": "textfield",
-    "body":"<%= f.text_field :${1:id_name} %>",
+    "body":"<%= form.text_field :${1:id_name} %>",
     "description": "rails text_field"
   },
   "date_field": {
     "prefix": "datefield",
-    "body": "<%= f.date_field :${1:id_name} %>",
+    "body": "<%= form.date_field :${1:id_name} %>",
     "description": "rails date_field"
   },
   "datetime_field": {
     "prefix": "datetimefield",
-    "body": "<%= f.datetime_field :${1:id_name} %>",
+    "body": "<%= form.datetime_field :${1:id_name} %>",
     "description": "rails datetime_field"
   },
   "radio_button": {
     "prefix": "radiobutton",
-    "body": "<%= f.radio_button :${1:name}, :value => '${2:value}' %>",
+    "body": "<%= form.radio_button :${1:name}, :value => '${2:value}' %>",
     "description": "rails radio_button,id will be ${name}_${value}"
   },
   "input": {
     "prefix": "input",
-    "body": "<%= f.input :${1:id}, label: '${2:text}' %>",
+    "body": "<%= form.input :${1:id}, label: '${2:text}' %>",
     "description": "rails input field"
   },
   "path": {
@@ -276,5 +276,75 @@
       "ssh-add ~/.ssh/id_rsa"
     ],
     "description": "place into gitbash to save ssh key so you can push without entering your password"
+  },
+  "index": {
+    "prefix": "index",
+    "body": [
+      "<table class='table'>",
+      "  <thead>",
+      "    <tr>",
+      "      <th>Id</th>",
+      "      <th>Name</th>",
+      "      <th colspan='3'></th>",
+      "    </tr>",
+      "  </thead>",
+      "  <tbody>",
+      "    <% @$1s.each do |$1| %>",
+      "      <tr>",
+      "        <td><%= $1.id %></td>",
+      "        <td><%= $1.name %></td>",
+      "        <td><%= link_to 'Show', $1 %></td>",
+      "        <td><%= link_to 'Edit', edit_$1_path($1) %></td>",
+      "        <td><%= link_to 'Destroy', $1, method: :delete, data: { confirm: 'Are you sure?' } %></td>",
+      "      </tr>",
+      "    <% end %>",
+      "  </tbody>",
+      "</table>"
+    ],
+    "description": "rails index.html.erb"
+  },
+  "show": {
+    "prefix": "show",
+    "body": [
+      "<table class='table'>",
+      "  <tbody>",
+      "    <tr>",
+      "      <td><%= @$1.id %></td>",
+      "      <td><%= @$1.name %></td>",
+      "    </tr>",
+      "  </tbody>",
+      "</table>",
+      "",
+      "<%= link_to 'Edit', edit_$1_path(@$1) %> |",
+      "<%= link_to 'Back', $1s_path %>"
+    ],
+    "description": "rails show.html.erb"
+  },
+  "form": {
+    "prefix": "form",
+    "body": [
+      "<%= form_with $1, local: true do |${2:form}| %>",
+      "  <% if $1.errors.any? %>",
+      "    <div id='error_explanation'>",
+      "      <h2><%= pluralize($1.errors.count, 'error') %> prohibited this $1 from being saved:</h2>",
+      "        <ul>",
+      "          <% $1.errors.full_messages.each do |message| %>",
+      "            <li><%= message %></li>",
+      "          <% end %>",
+      "        </ul>",
+      "    </div>",
+      "  <% end %>",
+      "",
+      "  <div class='form-group'>",
+      "    <%= form.label :id %>",
+      "    <%= form.number_field :id, class: 'form-control' %>",
+      "  </div>",
+      "",
+      "  <div class='actions'>",
+      "    <%= form.submit, class: 'btn btn-primary' %>",
+      "  </div>",
+      "<% end %>"
+    ],
+    "description": "rails _form.html.erb"
   }
 }

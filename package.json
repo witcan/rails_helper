@@ -9,12 +9,12 @@
         "color": "#8b0000",
         "theme": "dark"
     },
-    "homepage": "https://github.com/Chris56974/ruby-and-rails-snippets",
+    "homepage": "https://github.com/witcan/rails_helper",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Chris56974/ruby-and-rails-snippets"
+        "url": "https://github.com/witcan/rails_helper"
     },
-    "version": "0.2.3",
+    "version": "0.2.4",
     "engines": {
         "vscode": "^1.35.0"
     },
