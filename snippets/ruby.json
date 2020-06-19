@@ -336,6 +336,12 @@
     "description": "rails route of delete",
     "scope": "meta.rails.routes"
   },
+  "route root": {
+    "prefix": "root",
+    "body": "root '${2:controller}#${3:method}'",
+    "description": "rails route of root",
+    "scope": "meta.rails.routes"
+  },
   "resources": {
     "prefix": "res",
     "body": "resources :${1:res_name}",
