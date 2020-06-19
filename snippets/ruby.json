@@ -86,7 +86,11 @@
   },
   "def": {
     "prefix": "def",
-    "body": "def ${1:name}\n\t$0\nend",
+    "body": [
+      "def ${1:name}",
+      "  # code",
+      "end"
+    ],
     "description": "def",
     "scope": "source.ruby"
   },

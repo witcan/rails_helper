@@ -1,4 +1,4 @@
-## Ruby and Rails Snippets for Visual Studio Code 
+## Rails Helper for Visual Studio Code
 <p>
   <a href="https://marketplace.visualstudio.com/items?itemName=Cjay.ruby-and-rails-snippets">
     <img src="https://vsmarketplacebadge.apphb.com/version/Cjay.ruby-and-rails-snippets.svg">
@@ -36,19 +36,19 @@ do
   $0
 end
 ```
-#### [if] statement 
+#### [if] statement
 ```ruby
 if $1
   $0
 end
 ```
-#### [else] statement 
+#### [else] statement
 ```ruby
 else
   $0
 end
 ```
-#### [ifelse] statement 
+#### [ifelse] statement
 ```ruby
 if $1
   $2
@@ -56,7 +56,7 @@ else
   $0
 end
 ```
-#### [if elsif] statement 
+#### [if elsif] statement
 ```ruby
 if $1
   $2
@@ -64,7 +64,7 @@ elsif $3
   $0
 end
 ```
-#### [if elsif else] statement 
+#### [if elsif else] statement
 ```ruby
 if $1
   $2
@@ -74,7 +74,7 @@ else
   $0
 end
 ```
-#### [first] statement 
+#### [first] statement
 ```ruby
 first(${quantity})
 ```
@@ -90,18 +90,18 @@ find_by(${1:id_name}: params[:${2:param}])
 ```ruby
 where(${condition})
 ```
-#### [increment] increment 
+#### [increment] increment
 ```ruby
 increment(:${1:id})
-``` 
+```
 #### [order] order
 ```ruby
 order(${1:column}: :${2:desc})
-``` 
+```
 #### [limit] limit
 ```ruby
 limit(${quantity})
-``` 
+```
 #### [def] function
 ```ruby
 def ${1:name}
@@ -120,11 +120,11 @@ ${1:array}.select { |${2:i}| $0}
 ```ruby
 ${1:array}.inject(${2:0}) { |{$3:acc}, ${4:i}| $0}
 ```
-#### [all?] all? 
+#### [all?] all?
 ```ruby
 ${1:array}.all? {|${2:i}| $0}
 ```
-#### [any?] any? 
+#### [any?] any?
 ```ruby
 ${1:array}.any? {|${2:i}| $0}
 ```
@@ -142,7 +142,7 @@ begin
   $1
 rescue => exception
   $2
-ensure 
+ensure
   $3
 end
 ```
@@ -164,7 +164,7 @@ rescue => exception
   $2
 else
   $3
-ensure 
+ensure
   $4
 end
 ```
@@ -176,7 +176,7 @@ class ${1:ClassName}
   end
 end
 ```
-#### [cla1] Create a class and initialize 1 property 
+#### [cla1] Create a class and initialize 1 property
 ```ruby
 class ${1:ClassName}
   def initialize(${2:first})
@@ -185,7 +185,7 @@ class ${1:ClassName}
   $0
 end
 ```
-#### [cla2] Create a class and initialize 2 properties 
+#### [cla2] Create a class and initialize 2 properties
 ```ruby
 class ${1:ClassName}
   def initialize(${2:first}, ${3:second})
@@ -195,7 +195,7 @@ class ${1:ClassName}
   $0
 end
 ```
-#### [cla3] Create a class and initialize 3 properties 
+#### [cla3] Create a class and initialize 3 properties
 ```ruby
 class ${1:ClassName}
   def initialize(${2:first}, ${3:second}, ${4:third})
@@ -256,17 +256,17 @@ end
 ```
 #### [unless] unless
 ```ruby
-unless ${1:test} 
+unless ${1:test}
   $0
-end 
+end
 ```
 #### [unless else] unless
 ```ruby
 unless ${1:test}
   $2
-else 
+else
   $3
-end 
+end
 ```
 #### [rake] Create a rake task
 ```ruby
@@ -278,16 +278,16 @@ namespace :{1} do
 end
 ```
 # --- Ruby on Rails / .rb ---
-#### [only] 
+#### [only]
 ```ruby
 only: %i[${1:method}]
 ```
-#### [except] 
+#### [except]
 ```ruby
 except: %i[${1:method}]
 ```
 ## Rails Routing
-#### [get] get route 
+#### [get] get route
 ```ruby
 get '/${1:route}', to: '${2:controller}#${3:method}'
 ```
@@ -385,7 +385,7 @@ redirect_to ${1:path}
 redirect_to ${path}, notice: '${msg}'
 ```
 ## Model
-#### [has_one] has_one 
+#### [has_one] has_one
 ```ruby
 has_one :$0
 ```
@@ -466,51 +466,51 @@ end
 ```
 #### [index] index method
 ```ruby
-def index 
+def index
   $1
-end 
+end
 ```
 #### [create] create method
 ```ruby
-def create 
+def create
   $0
-end 
+end
 ```
 #### [new] new method
 ```ruby
-def new 
+def new
   $0
-end 
+end
 ```
 #### [edit] edit method
 ```ruby
-def edit 
+def edit
   $0
-end 
+end
 ```
 #### [show] show method
 ```ruby
-def show 
+def show
   $0
-end 
+end
 ```
 #### [update] update method
 ```ruby
-def update 
+def update
   $0
-end 
+end
 ```
 #### [destroy] destroy method
 ```ruby
-def destroy 
+def destroy
   $0
-end 
+end
 ```
 #### [crud] full crud
 ```ruby
 def index
-end 
-def new  
+end
+def new
 end
 def create
 end
@@ -527,7 +527,7 @@ end
 ```ruby
 before_action :${1:id}
 ```
-# --- html.erb / html.slim --- 
+# --- html.erb / html.slim ---
 #### [pre] template exec tag `<% %>`
 ```javascript
 <% $1 %>
@@ -560,7 +560,7 @@ before_action :${1:id}
   $0
 <% end %>
 ```
-#### [timezone] select time zone 
+#### [timezone] select time zone
 ```javascript
 <%= f.time_zone_select :${1:id_name} %>
 ```
@@ -578,11 +578,11 @@ before_action :${1:id}
 ```
 #### [options_for_select] options_for_select
 ```ruby
-options_for_select([${1:options}])$0 
+options_for_select([${1:options}])$0
 ```
 #### [render] render
 ```javascript
-<%= render ${1:path} %>$0 
+<%= render ${1:path} %>$0
 ```
 #### [rendervar] render variable
 ```javascript
@@ -684,7 +684,7 @@ new_${1:path}_path
 ```javascript
 edit_${1:path}_path(${2:variable})
 ```
-#### [if] if statement 
+#### [if] if statement
 ```javascript
 <% if $1 %>
   $2
@@ -698,7 +698,7 @@ edit_${1:path}_path(${2:variable})
 ```javascript
 <% elsif $1 %>$0
 ```
-#### [ifelse] if else statement 
+#### [ifelse] if else statement
 ```javascript
 <% if $1 %>
   $2
@@ -744,7 +744,7 @@ edit_${1:path}_path(${2:variable})
 ```
 ___
 # --- Other ---
-#### [frozenstring] 
+#### [frozenstring]
 ```ruby
 # frozen_string_literal_true
 ```
@@ -757,12 +757,12 @@ ___
 bundle exec rbprettier --write '**/*.rb'
 ```
 
-#### [gitbashssh] enter into gitbash to avoid re-entering your password on pushes  
+#### [gitbashssh] enter into gitbash to avoid re-entering your password on pushes
 ```
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_rsa
 ```
 1. Copy and paste these two lines into your terminal
-2. Push to your repository without entering your password 
+2. Push to your repository without entering your password
 
 # License - MIT
