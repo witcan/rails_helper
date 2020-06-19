@@ -364,5 +364,38 @@
       "<% end %>"
     ],
     "description": "rails _form.html.erb"
+  },
+
+  "js console": {
+    "prefix": ["console.log", "log"],
+    "body": [
+      "console.log('')"
+    ],
+    "description": "console.log"
+  },
+  "js function": {
+    "prefix": "fun",
+    "body": [
+      "function name(augument) {",
+      "  // code",
+      "}"
+    ],
+    "description": "function name(augument){...}"
+  },
+  "jquery ajax": {
+    "prefix": "ajax",
+    "body": [
+      "$.ajax({",
+      "  url: '$1',",
+      "  type: 'post',",
+      "  data: {",
+      "    key: value",
+      "  },",
+      "  success: function(result){",
+      "    // code",
+      "  }",
+      "});"
+    ],
+    "description": "$.ajax({...})"
   }
 }
